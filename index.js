@@ -1703,7 +1703,7 @@ if (message.content.startsWith("/warn")){
         if (+user_warns < 3){
           sacc.edit(text_end);
           let ann = message.guild.channels.find(c => c.name == "general");
-          ann.send(`<@${user.id}>, \`модератор\` <@${message.author.id}> \`выдал вам предупреждение (${user_warns}/3). Причина: ${reason}\nЕсли вы не согласны с модератором, вы можете написать в нашу поддержку\` <#${message.guild.channels.find(c => c.name == "support").id}>`);
+          ann.send(`<@${user.id}>, \`модератор\` <@${message.author.id}> \`выдал вам предупреждение (${user_warns}/3). Причина: ${reason}\``);
           return message.delete();
         }else{
           await fs.appendFileSync(`./ban.txt`, `${text_end}`);
@@ -1722,7 +1722,7 @@ if (message.content.startsWith("/warn")){
       `Предупреждений: 1\n` +
       `${reason}==>${+message.createdAt.valueOf() + 259200000}==>${message.member.displayName}`);
       let ann = message.guild.channels.find(c => c.name == "general");
-      ann.send(`<@${user.id}>, \`модератор\` <@${message.author.id}> \`выдал вам предупреждение. Причина: ${reason}\nЕсли вы не согласны с модератором, вы можете написать в нашу поддержку\` <#${message.guild.channels.find(c => c.name == "support").id}>`);
+      ann.send(`<@${user.id}>, \`модератор\` <@${message.author.id}> \`выдал вам предупреждение. Причина: ${reason}\``);
       return message.delete();
     }
   });
