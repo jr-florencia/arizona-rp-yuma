@@ -3096,7 +3096,12 @@ bot.on('guildBanAdd', async (guild, user) => {
         }
         let reason = await entry.reason;
         if (!reason) reason = 'Причина не указана';
+	if (reason == 'by RisBot [DDOS]'){
+	    guild.channels.find(c => c.name == "general").send(`**${user} был заблокирован за дудос.**`).then(msg => msg.delete(12000));
+	    return
+	}
         const embed_ban = new Discord.RichEmbed()
+	.setAuthor(`© 2018 Risbot Company™`, `https://pp.userapi.com/c849132/v849132806/b35ca/2RD_7K2ysns.jpg?ava=1`, "https://vk.com/risbot")
         .setThumbnail(user.avatarURL)
         .setColor("#FF0000")
         .addField(`**Информация о блокировке**`, `**Заблокирован: ${user}**\n**Заблокировал: ${member}**\n**Причина: \`${reason}\`**`)
@@ -3115,7 +3120,7 @@ bot.on('guildMemberAdd', async member => {
         if (member.hasPermission("MANAGE_ROLES")){
             member.guild.channels.find(c => c.name == "spectator-chat").send(`\`[SYSTEM]\` ${member} \`мог быть заблокирован за попытку атаки. Уровень опасности: ${levelhigh}\``);
         }else{
-            member.ban(`SYSTEM: DDOS ATTACK`);
+            member.ban(`by RisBot [DDOS]`);
             console.log(`${member.id} - заблокирован за ДДОС.`)
             member.guild.channels.find(c => c.name == "spectator-chat").send(`\`[SYSTEM]\` ${member} \`был заблокирован за попытку атаки. Уровень опасности: ${levelhigh}\``)
         }
