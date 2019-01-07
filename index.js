@@ -3108,7 +3108,6 @@ bot.on('guildBanAdd', async (guild, user) => {
     }, 2000);
 })
 
-/*
 bot.on('guildMemberAdd', async member => {
     if (member.guild.id != serverid) return
     levelhigh++;
@@ -3136,4 +3135,3 @@ bot.on('guildMemberAdd', async member => {
         }, 60000*levelhigh);
     }
 })
-*/
