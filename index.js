@@ -25,23 +25,25 @@ punishment_rep = ({
 })
 
 tags = ({
-    "ПРА-ВО": "⋆ The Board of State ⋆",
-    "ГЦЛ": "⋆ The Board of State ⋆",
-    "АШ": "⋆ The Board of State ⋆",
-    "ЦБ": "⋆ The Board of State ⋆",
+    "ПРА-ВО": "⋆ Government ⋆",
+    "ГЦЛ": "⋆ Driving School ⋆",
+    "АШ": "⋆ Driving School ⋆",
+    "ЦБ": "⋆ Central Bank of Los-Santos ⋆",
 
-    "FBI": "⋆ Department of Justice ⋆",
-    "ФБР": "⋆ Department of Justice ⋆",
-    "LSPD": "⋆ Department of Justice ⋆",
-    "ЛСПД": "⋆ Department of Justice ⋆",
-    "SFPD": "⋆ Department of Justice ⋆",
-    "СФПД": "⋆ Department of Justice ⋆",
-    "LVPD": "⋆ Department of Justice ⋆",
-    "ЛВПД": "⋆ Department of Justice ⋆",
-    "SWAT": "⋆ Department of Justice ⋆",
-    "СВАТ": "⋆ Department of Justice ⋆",
-    "RCPD": "⋆ Department of Justice ⋆",
-    "РКПД": "⋆ Department of Justice ⋆",
+    "FBI": "⋆ Federal Bureau of Investigation ⋆",
+    "ФБР": "⋆ Federal Bureau of Investigation ⋆",
+    "LSPD": "⋆ Los-Santos Police Department ⋆",
+    "ЛСПД": "⋆ Los-Santos Police Department ⋆",
+    "SFPD": "⋆ San-Fierro Police Department ⋆",
+    "СФПД": "⋆ San-Fierro Police Department ⋆",
+    "LVPD": "⋆ Special Weapons And Tactics ⋆",
+    "ЛВПД": "⋆ Special Weapons And Tactics ⋆",
+    "SWAT": "⋆ Special Weapons And Tactics ⋆",
+    "СВАТ": "⋆ Special Weapons And Tactics ⋆",
+    "RCPD": "⋆ Red Country Sheriff Department ⋆",
+    "РКПД": "⋆ Red Country Sheriff Department ⋆",
+    "RCSD": "⋆ Red Country Sheriff Department ⋆",
+    "РКШД": "⋆ Red Country Sheriff Department ⋆",
 
     "LSA": "⋆ Los-Santos Army ⋆",
     "ЛСА": "⋆ Los-Santos Army ⋆",
@@ -54,25 +56,25 @@ tags = ({
     "ТСР": "⋆ Maximum Security Prison ⋆",
     "ТЮРЬМА": "⋆ Maximum Security Prison ⋆",
 
-    "LSMC": "⋆ Department of Health ⋆",
-    "ЛСМЦ": "⋆ Department of Health ⋆",
-    "SFMC": "⋆ Department of Health ⋆",
-    "СФМЦ": "⋆ Department of Health ⋆",
-    "LVMC": "⋆ Department of Health ⋆",
-    "ЛВМЦ": "⋆ Department of Health ⋆",
+    "LSMC": "⋆ Los-Santos Medical Center ⋆",
+    "ЛСМЦ": "⋆ Los-Santos Medical Center ⋆",
+    "SFMC": "⋆ San-Fierro Medical Center ⋆",
+    "СФМЦ": "⋆ San-Fierro Medical Center ⋆",
+    "LVMC": "⋆ Las-Venturas Medical Center ⋆",
+    "ЛВМЦ": "⋆ Las-Venturas Medical Center ⋆",
 
-    "R-LS": "⋆ Mass Media ⋆",
-    "RLS": "⋆ Mass Media ⋆",
-    "Р-ЛС": "⋆ Mass Media ⋆",
-    "РЛС": "⋆ Mass Media ⋆",
-    "R-SF": "⋆ Mass Media ⋆",
-    "RSF": "⋆ Mass Media ⋆",
-    "Р-СФ": "⋆ Mass Media ⋆",
-    "РСФ": "⋆ Mass Media ⋆",
-    "R-LV": "⋆ Mass Media ⋆",
-    "RLV": "⋆ Mass Media ⋆",
-    "Р-ЛВ": "⋆ Mass Media ⋆",
-    "РЛВ": "⋆ Mass Media ⋆",
+    "R-LS": "⋆ Radiocentre Los-Santos ⋆",
+    "RLS": "⋆ Radiocentre Los-Santos ⋆",
+    "Р-ЛС": "⋆ Radiocentre Los-Santos ⋆",
+    "РЛС": "⋆ Radiocentre Los-Santos ⋆",
+    "R-SF": "⋆ Radiocentre San-Fierro ⋆",
+    "RSF": "⋆ Radiocentre San-Fierro ⋆",
+    "Р-СФ": "⋆ Radiocentre San-Fierro ⋆",
+    "РСФ": "⋆ Radiocentre San-Fierro ⋆",
+    "R-LV": "⋆ Radiocentre Las-Venturas ⋆",
+    "RLV": "⋆ Radiocentre Las-Venturas ⋆",
+    "Р-ЛВ": "⋆ Radiocentre Las-Venturas ⋆",
+    "РЛВ": "⋆ Radiocentre Las-Venturas ⋆",
 
     "WMC": "⋆ Warlock MC ⋆",
     "W-MC": "⋆ Warlock MC ⋆",
@@ -115,6 +117,8 @@ let manytags = [
 "СВАТ",
 "RCPD",
 "РКПД",
+"RCSD",
+"РКШД",
 
 "LSA",
 "ЛСА",
@@ -169,7 +173,7 @@ let manytags = [
 "NW",
 "НВ",
 ];
-let rolesgg = ["⋆ The Board of State ⋆", "⋆ Department of Justice ⋆", "⋆ Los-Santos Army ⋆", "⋆ San-Fierro Army ⋆", "⋆ Maximum Security Prison ⋆", "⋆ Department of Health ⋆", "⋆ Mass Media ⋆", "⋆ Warlock MC ⋆", "⋆ Russian Mafia ⋆", "⋆ La Cosa Nostra ⋆", "⋆ Yakuza ⋆", "⋆ Grove Street Gang ⋆", "⋆ East Side Ballas Gang ⋆", "⋆ Vagos Gang ⋆", "⋆ Aztecas Gang ⋆", "⋆ Rifa Gang ⋆", "⋆ Night Wolfs ⋆"]
+let rolesgg = ["⋆ Government ⋆", "⋆ Central Bank of Los-Santos ⋆", "⋆ Driving School ⋆", "⋆ Federal Bureau of Investigation ⋆", "⋆ Special Weapons And Tactics ⋆", "⋆ Los-Santos Police Department ⋆", "⋆ San-Fierro Police Department ⋆", "⋆ Red Country Sheriff Department ⋆", "⋆ Los-Santos Army ⋆", "⋆ San-Fierro Army ⋆", "⋆ Maximum Security Prison ⋆", "⋆ Los-Santos Medical Center ⋆", "⋆ San-Fierro Medical Center ⋆", "⋆ Las-Venturas Medical Center ⋆", "⋆ Radiocentre Los-Santos ⋆", "⋆ Radiocentre San-Fierro ⋆", "⋆ Radiocentre Las-Venturas ⋆", "⋆ Warlock MC ⋆", "⋆ Russian Mafia ⋆", "⋆ La Cosa Nostra ⋆", "⋆ Yakuza ⋆", "⋆ Grove Street Gang ⋆", "⋆ East Side Ballas Gang ⋆", "⋆ Vagos Gang ⋆", "⋆ Aztecas Gang ⋆", "⋆ Rifa Gang ⋆", "⋆ Night Wolfs ⋆"]
 let canremoverole = ["✫Deputy Leader✫", "✵Leader✵", "✮Ministers✮", "✔ Helper ✔"];
 
 const events = {
@@ -712,7 +716,7 @@ bot.on('message', async message => {
     let dataserver = bot.guilds.find(g => g.id == "531533132982124544");
     let scottdale = bot.guilds.find(g => g.id == "528635749206196232");
     if (!dataserver){
-        message.channel.send(`\`Data-Server of Scottdale не был загружен!\nПередайте это сообщение техническим администраторам Discord:\`<@336207279412215809>, <@402092109429080066>`)
+        message.channel.send(`\`Data-Server of Yuma не был загружен!\nПередайте это сообщение техническим администраторам Discord:\`<@336207279412215809>, <@402092109429080066>`)
         console.error(`Процесс завершен. Data-Server не найден.`)
         return bot.destroy();
     }
@@ -749,22 +753,32 @@ bot.on('message', async message => {
         }
         /*
         [0] - снять права доступа
-        [1] - может использовать /embhelp и все что с ним связано.
-        [2] - может выдавать права доступа на /embhelp
+        [1] - выдать доступ к выдачи фбр каналу
+        [2] - выдача к выдачи доступа к фбр каналу
+        [3] - выдача к EMBHELP
+        [4] - выдача к выдачи EMBHELP
         ADMINISTRATOR само собой
         */
-        if (args[2] > 2 || args[2] < 0){
-            message.reply(`\`укажи верный уровень доступа! '/setup [user] [уровень (0-2)]'\``)
+        if (args[2] > 4 || args[2] < 0){
+            message.reply(`\`укажи верный уровень доступа! '/setup [user] [уровень (0-4)]'\``)
             return message.delete();
         }
-	if (!message.member.hasPermission("ADMINISTRATOR") && +level_mod <= +args[2]){
-            message.reply(`\`ты не можешь выдавать уровень равный твоему или выше '/setup [user] [уровень (0-2)]'\``)
-            return message.delete();
-	}
+	    if (!message.member.hasPermission("ADMINISTRATOR")){
+            if (args[2] == 1 && +level_mod != 2){
+                message.reply(`\`недостаточно прав доступа.\``)
+                return message.delete();
+            }else if (args[2] == 3 && +level_mod != 4){
+                message.reply(`\`недостаточно прав доступа.\``)
+                return message.delete();
+            }else{
+                message.reply(`\`недостаточно прав доступа. Нужно: "ADMINISTRATOR"\``)
+                return message.delete();
+            }
+	    }
         let acc = db_server.channels.find(c => c.name == user.id);
         if (!acc){
             await db_server.createChannel(user.id).then(async chan => {
-		await chan.setTopic(`<@${user.id}> - ${user.displayName}`);
+		    await chan.setTopic(`<@${user.id}> - ${user.displayName}`);
                 acc = chan;
             });
         }
@@ -847,7 +861,7 @@ bot.on('message', async message => {
                 }
             });
         }
-        if (!message.member.hasPermission("ADMINISTRATOR") && +level_mod < 1) return
+        if (!message.member.hasPermission("ADMINISTRATOR") && +level_mod != 3 && +level_mod != 4) return
         message.reply(`\`Команды для модерации: /embsetup, /embfield, /embsend - отправить.\``);
         return message.delete();
     }
@@ -867,7 +881,7 @@ bot.on('message', async message => {
                 }
             });
         }
-        if (!message.member.hasPermission("ADMINISTRATOR") && +level_mod < 1) return
+        if (!message.member.hasPermission("ADMINISTRATOR") && +level_mod != 3 && +level_mod != 4) return
         const args = message.content.slice(`/embsetup`).split(/ +/);
         if (!args[1]){
             message.reply(`\`укажите, что вы установите! Ниже предоставлен список настроек.\`\n\`[1] - Название\`\n\`[2] - Описание\`\n\`[3] - Цвет [#FFFFFF]\`\n\`[4] - Время\`\n\`[5] - Картинка\`\n\`[6] - Подпись\`\n\`[7] - Картинка к подписи\``);
@@ -936,7 +950,7 @@ bot.on('message', async message => {
                 }
             });
         }
-        if (!message.member.hasPermission("ADMINISTRATOR") && +level_mod < 1) return
+        if (!message.member.hasPermission("ADMINISTRATOR") && +level_mod != 3 && +level_mod != 4) return
         const args = message.content.slice(`/embfield`).split(/ +/);
         if (!args[1]){
             message.reply(`\`укажите номер поля, которое вы хотите отредактировать!\``);
@@ -1036,7 +1050,7 @@ bot.on('message', async message => {
         message.channel.send(embed).catch(err => message.channel.send(`\`Хм.. Не получается. Возможно вы сделали что-то не так.\``));
         return message.delete();
     }
-
+/*
 if (message.content.startsWith("/del") && !message.content.includes("fam")){
   if (!fbi_dostup.has(message.author.id) && !message.member.hasPermission("ADMINISTRATOR")){
     message.reply(`\`недостаточно прав доступа.\``, authorrisbot).then(msg => msg.delete(10000));
@@ -1058,7 +1072,7 @@ if (message.content.startsWith("/del") && !message.content.includes("fam")){
   message.reply(`\`вы успешно забрали доступ у пользователя\` <@${user.id}> \`к каналу FBI.\``);
   return message.delete();
 }
-    
+*/  
 if (message.content.startsWith("/mwarn")){
   if (!message.member.hasPermission("ADMINISTRATOR")) return
   let user = message.guild.member(message.mentions.users.first());
@@ -1727,58 +1741,6 @@ if (message.content.startsWith("/warn")){
     }
   });
 }
-
-    if (message.content.startsWith(`/dspanel`)){
-        if (message.guild.id != scottdale.id) return
-        if (!message.member.hasPermission("MANAGE_ROLES")) return
-        if (dspanel.has(message.author.id)){
-            dspanel.delete(message.author.id);
-            message.reply(`\`успешно вышел из системы.\``);
-            return message.delete();
-        }
-        const args = message.content.slice('/dspanel').split(/ +/)
-        if (!args[1]){
-            message.reply(`\`введите пароль.\``).then(msg => msg.delete(7000));
-            return message.delete();
-        }
-        let password = args.slice(1).join(" ");
-        if (password != `${message.author.id[0]}${message.author.id}${message.author.id[1]} 2783652 SCOTTDALE`) return message.delete();
-        message.reply(`\`успешно авторизован в системе.\``);
-        dspanel.add(message.author.id);
-        return message.delete();
-    }
-
-    if (message.content == `/chat`){
-        if (message.guild.id != scottdale.id) return
-        if (!message.member.hasPermission("MANAGE_ROLES")) return
-        if (!dspanel.has(message.author.id)) return message.reply(`\`вы не авторизованы в системе модерирования.\``) && message.delete()
-        message.reply(`\`для выключения чата используй /chat off, для включения: /chat on\``);
-        return message.delete();
-    }
-
-    if (message.content == `/chat off`){
-        if (message.guild.id != scottdale.id) return
-        if (!message.member.hasPermission("MANAGE_ROLES")) return
-        if (!dspanel.has(message.author.id)) return message.reply(`\`вы не авторизованы в системе модерирования.\``) && message.delete()
-        scottdale.channels.find(c => c.name == "general").overwritePermissions(scottdale.roles.find(r => r.name.includes(`everyone`)), {
-            SEND_MESSAGES: false,
-        })
-        scottdale.channels.find(c => c.name == "spectator-chat").send(`\`Модератор ${message.member.displayName} отключил чат:\` <#${scottdale.channels.find(c => c.name == "general").id}>`)
-        message.reply(`\`вы успешно отключили чат!\``)
-        return messages.delete();
-    }
-
-    if (message.content == `/chat on`){
-        if (message.guild.id != scottdale.id) return
-        if (!message.member.hasPermission("MANAGE_ROLES")) return
-        if (!dspanel.has(message.author.id)) return message.reply(`\`вы не авторизованы в системе модерирования.\``) && message.delete()
-        scottdale.channels.find(c => c.name == "general").overwritePermissions(scottdale.roles.find(r => r.name.includes(`everyone`)), {
-            SEND_MESSAGES: true,
-        })
-        scottdale.channels.find(c => c.name == "spectator-chat").send(`\`Модератор ${message.member.displayName} включил чат:\` <#${scottdale.channels.find(c => c.name == "general").id}>`)
-        message.reply(`\`вы успешно включили чат!\``)
-        return messages.delete();
-    }
     
         if (message.content.toLowerCase() == '/famhelp'){
         message.channel.send(`**<@${message.author.id}>, вот справка по системе семей!**`, {embed: {
@@ -2728,22 +2690,6 @@ if (message.content.startsWith("/warn")){
             return message.delete();
         }
     }
-	
-    if (message.content.startsWith("/dwarn")){
-	if (!message.member.hasPermission("ADMINISTRATOR")){
-	    message.reply(`\`недостаточно прав доступа!\``).then(msg => msg.delete(12000));
-	    return message.delete();
-	}
-	let user = message.guild.member(message.mentions.users.first());
-        if (!user){
-            message.reply(`\`пользователь не указан! '/dwarn [user]'\``)
-            return message.delete();
-        }
-	antislivsp1.delete(user.id);
-	antislivsp2.delete(user.id);
-	let spchangg = message.guild.channels.find(c => c.name == "spectator-chat");
-	spchangg.send(`\`${message.member.displayName} очистил все предупреждения системой антислива пользователю\` <@${user.id}>`);
-    }
     
     if (message.content.toLowerCase().includes("сними") || message.content.toLowerCase().includes("снять")){
         if (!message.member.roles.some(r => canremoverole.includes(r.name)) && !message.member.hasPermission("MANAGE_ROLES")) return
@@ -2828,7 +2774,7 @@ if (message.content.startsWith("/warn")){
                     return console.error(`Канал requests-for-roles не был найден!`)
                 }
                 if (message.member.roles.some(r => [rolename].includes(r.name))){
-                    return message.react(`👌`) // Если роль есть, поставить окей.
+                    return message.react(`🚫`) // Если роль есть, поставить error.
                 }
                 if (sened.has(message.member.displayName)) return message.react(`🕖`) // Если уже отправлял - поставить часы.
                 let nickname = message.member.displayName;
@@ -2854,94 +2800,7 @@ if (message.content.startsWith("/warn")){
         }
     }
 });
-/*
-bot.on('guildMemberUpdate', async (oldMember, newMember) => {
-    if (newMember.guild.id != "355656045600964609") return // Сервер не 03!
-    if (oldMember.roles.size == newMember.roles.size) return // Сменил ник или еще чет!
-    if (newMember.user.bot) return // Бот не принимается!
-    if (oldMember.roles.size < newMember.roles.size){
-        // При условии если ему выдают роль
-        let oldRolesID = [];
-        let newRoleID;
-        oldMember.roles.forEach(role => oldRolesID.push(role.id));
-        newMember.roles.forEach(role => {
-            if (!oldRolesID.some(elemet => elemet == role.id)) newRoleID = role.id;
-        })
-        let role = newMember.guild.roles.get(newRoleID);
-        if (role.name != "Spectator™" && role.name != "Support Team") return
-        const entry = await newMember.guild.fetchAuditLogs({type: 'MEMBER_ROLE_UPDATE'}).then(audit => audit.entries.first());
-        let member = await newMember.guild.members.get(entry.executor.id);
-        if (member.user.bot) return // Бот не принимается!
-        if (!member.hasPermission("ADMINISTRATOR")){
-            if (antislivsp1.has(member.id)){
-                if (antislivsp2.has(member.id)){
-                    member.removeRoles(member.roles);
-                    return newMember.guild.channels.find(c => c.name == "spectator-chat").send(`\`[ANTISLIV SYSTEM]\` <@${member.id}> \`подозревался в попытке слива. [3/3] Я снял с него роли. Пострадал:\` <@${newMember.id}>, \`выдали роль\` <@&${role.id}>`);
-                }else{
-                    newMember.guild.channels.find(c => c.name == "spectator-chat").send(`\`[WARNING]\` <@${member.id}> \`подозревается в попытке слива!!! [2/3] Выдача роли\` <@&${role.id}> \`пользователю\` <@${newMember.id}>`)
-                    return antislivsp2.add(member.id);
-                }
-            }
-            newMember.guild.channels.find(c => c.name == "spectator-chat").send(`\`[WARNING]\` <@${member.id}> \`подозревается в попытке слива!!! [1/3] Выдача роли\` <@&${role.id}> \`пользователю\` <@${newMember.id}>`)
-            return antislivsp1.add(member.id);
-        }
-        let spec_chat = await newMember.guild.channels.find(c => c.name == "request-dev");
-        let question = await spec_chat.send(`<@${member.id}>, \`вы выдали роль\` <@&${role.id}> \`пользователю\` <@${newMember.id}>\n\`Укажите причину выдачи роли в новом сообщении!\``);
-        spec_chat.awaitMessages(response => response.member.id == member.id, {
-            max: 1,
-            time: 120000,
-            errors: ['time'],
-        }).then(async (answer) => {
-            question.delete().catch(() => {});
-            spec_chat.send(`\`[MODERATOR_ADD]\` \`${member.displayName} выдал роль\` <@&${role.id}> \`пользователю\` <@${newMember.id}>. \`Причина: ${answer.first().content}\``);
-            answer.first().delete().catch(() => {});
-        }).catch(async () => {
-            question.delete().catch(() => {});
-            spec_chat.send(`\`[MODERATOR_ADD]\` \`${member.displayName} выдал роль\` <@&${role.id}> \`пользователю\` <@${newMember.id}>. \`Причина: не указана.\``);
-        })
-    }else{
-        // При условии если ему снимают роль
-        let newRolesID = [];
-        let oldRoleID;
-        newMember.roles.forEach(role => newRolesID.push(role.id));
-        oldMember.roles.forEach(role => {
-            if (!newRolesID.some(elemet => elemet == role.id)) oldRoleID = role.id;
-        })
-        let role = newMember.guild.roles.get(oldRoleID);
-        if (role.name != "Spectator™" && role.name != "Support Team") return
-        const entry = await newMember.guild.fetchAuditLogs({type: 'MEMBER_ROLE_UPDATE'}).then(audit => audit.entries.first())
-        let member = await newMember.guild.members.get(entry.executor.id);
-        if (member.user.bot) return // Бот не принимается!
-        if (!member.hasPermission("ADMINISTRATOR")){
-            if (antislivsp1.has(member.id)){
-                if (antislivsp2.has(member.id)){
-                    member.removeRoles(member.roles);
-                    return newMember.guild.channels.find(c => c.name == "spectator-chat").send(`\`[ANTISLIV SYSTEM]\` <@${member.id}> \`подозревался в попытке слива. [3/3] Я снял с него роли. Пострадал:\` <@${newMember.id}>, \`сняли роль\` <@&${role.id}>`);
-                }else{
-                    newMember.guild.channels.find(c => c.name == "spectator-chat").send(`\`[WARNING]\` <@${member.id}> \`подозревается в попытке слива!!! [2/3] Снятие роли\` <@&${role.id}> \`пользователю\` <@${newMember.id}>`)
-                    return antislivsp2.add(member.id);
-                }
-            }
-            newMember.guild.channels.find(c => c.name == "spectator-chat").send(`\`[WARNING]\` <@${member.id}> \`подозревается в попытке слива!!! [1/3] Снятие роли\` <@&${role.id}> \`пользователю\` <@${newMember.id}>`)
-            return antislivsp1.add(member.id);
-        }
-        let spec_chat = await newMember.guild.channels.find(c => c.name == "request-dev");
-        let question = await spec_chat.send(`<@${member.id}>, \`вы сняли роль\` <@&${role.id}> \`модератору\` <@${newMember.id}>\n\`Укажите причину снятия роли в новом сообщении!\``);
-        spec_chat.awaitMessages(response => response.member.id == member.id, {
-            max: 1,
-            time: 120000,
-            errors: ['time'],
-        }).then(async (answer) => {
-            question.delete().catch(() => {});
-            spec_chat.send(`\`[MODERATOR_DEL]\` \`${member.displayName} снял роль\` <@&${role.id}> \`модератору\` <@${newMember.id}>. \`Причина: ${answer.first().content}\``);
-            answer.first().delete().catch(() => {});
-        }).catch(async () => {
-            question.delete().catch(() => {});
-            spec_chat.send(`\`[MODERATOR_DEL]\` \`${member.displayName} снял роль\` <@&${role.id}> \`модератора\` <@${newMember.id}>. \`Причина: не указана.\``);
-        })
-    }
-})
-*/
+
 bot.on('raw', async event => {
     if (!events.hasOwnProperty(event.t)) return; // Если не будет добавление или удаление смайлика, то выход
     if (event.t == "MESSAGE_REACTION_ADD"){
@@ -2973,6 +2832,11 @@ bot.on('raw', async event => {
                 if (!field_user || !field_nickname || !field_role || !field_channel){
                     channel.send(`\`[DELETED]\` ${member} \`удалил багнутый запрос.\``);
                 }else{
+                    if (!member.hasPermission("ADMINISTRATOR")){
+                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                            return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
+                        }
+                    }
                     channel.send(`\`[DELETED]\` ${member} \`удалил запрос от ${field_nickname}, с ID: ${field_user.id}\``);
                 }
                 if (sened.has(field_nickname)) sened.delete(field_nickname); // Отметить ник, что он не отправлял запрос
@@ -2985,6 +2849,11 @@ bot.on('raw', async event => {
                 if (!field_author || !field_user || !field_role || !field_channel){
                     channel.send(`\`[DELETED]\` ${member} \`удалил багнутый запрос на снятие роли.\``);
                 }else{
+                    if (!member.hasPermission("ADMINISTRATOR")){
+                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                            return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
+                        }
+                    }
                     channel.send(`\`[DELETED]\` ${member} \`удалил запрос на снятие роли от ${field_author.displayName}, с ID: ${field_author.id}\``);
                 }
                 if (snyatie.has(field_author.id + `=>` + field_user.id)) snyatie.delete(field_author.id + `=>` + field_user.id)
@@ -2999,6 +2868,11 @@ bot.on('raw', async event => {
                 let field_nickname = message.embeds[0].fields[1].value.split(`\`Ник:\` `)[1];
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
+                if (!member.hasPermission("ADMINISTRATOR")){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа выдачи роли.\``).then(msg => msg.delete(12000));
+                    }
+                }
                 channel.send(`\`[DENY]\` <@${member.id}> \`отклонил запрос от ${field_nickname}, с ID: ${field_user.id}\``);
                 field_channel.send(`<@${field_user.id}>**,** \`модератор\` <@${member.id}> \`отклонил ваш запрос на выдачу роли.\nВаш ник при отправке: ${field_nickname}\``)
                 nrpnames.add(field_nickname); // Добавить данный никнейм в список невалидных
@@ -3012,7 +2886,11 @@ bot.on('raw', async event => {
                 let field_user = server.members.find(m => "<@" + m.id + ">" == message.embeds[0].fields[1].value.split(/ +/)[1]);
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
-                if (member.id == field_author.id) return channel.send(`\`[ERROR]\` \`${member.displayName} свои запросы отклонять нельзя!\``).then(msg => msg.delete(5000))
+                if (!member.hasPermission("ADMINISTRATOR")){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа снятия роли.\``).then(msg => msg.delete(12000));
+                    }
+                }
                 if (!field_user.roles.some(r => r.id == field_role.id)){
                     if (snyatie.has(field_author.id + `=>` + field_user.id)) snyatie.delete(field_author.id + `=>` + field_user.id)
                     return message.delete();
@@ -3034,6 +2912,11 @@ bot.on('raw', async event => {
                 if (field_user.roles.some(r => field_role.id == r.id)){
                     if (sened.has(field_nickname)) sened.delete(field_nickname); // Отметить ник, что он не отправлял запрос
                     return message.delete(); // Если роль есть, то выход
+                }
+                if (!member.hasPermission("ADMINISTRATOR")){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для выдачи роли.\``).then(msg => msg.delete(12000));
+                    }
                 }
                 let rolesremoved = false;
                 let rolesremovedcount = 0;
@@ -3070,7 +2953,11 @@ bot.on('raw', async event => {
                 let field_user = server.members.find(m => "<@" + m.id + ">" == message.embeds[0].fields[1].value.split(/ +/)[1]);
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
-                if (member.id == field_author.id) return channel.send(`\`[ERROR]\` \`${member.displayName} свои запросы принимать нельзя!\``).then(msg => msg.delete(5000))
+                if (!member.hasPermission("ADMINISTRATOR")){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для снятия роли.\``).then(msg => msg.delete(12000));
+                    }
+                }
                 if (!field_user.roles.some(r => r.id == field_role.id)){
                     if (snyatie.has(field_author.id + `=>` + field_user.id)) snyatie.delete(field_author.id + `=>` + field_user.id)
                     return message.delete();
@@ -3101,7 +2988,7 @@ bot.on('guildBanAdd', async (guild, user) => {
 	    return
 	}
         const embed_ban = new Discord.RichEmbed()
-	.setAuthor(`© 2018 Risbot Company™`, `https://pp.userapi.com/c849132/v849132806/b35ca/2RD_7K2ysns.jpg?ava=1`, "https://vk.com/risbot")
+	    .setAuthor(`© 2018 Risbot Company™`, `https://pp.userapi.com/c849132/v849132806/b35ca/2RD_7K2ysns.jpg?ava=1`, "https://vk.com/risbot")
         .setThumbnail(user.avatarURL)
         .setColor("#FF0000")
         .addField(`**Информация о блокировке**`, `**Заблокирован: ${user}**\n**Заблокировал: ${member}**\n**Причина: \`${reason}\`**`)
