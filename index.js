@@ -2772,14 +2772,16 @@ if (message.content.startsWith("/warn")){
     if (message.content.toLowerCase().includes("роль") && !message.content.toLowerCase().includes(`сними`) && !message.content.toLowerCase().includes(`снять`)){
         // Проверить невалидный ли ник.
         if (nrpnames.has(message.member.displayName)){
-            if(message.member.roles.some(r=>rolesgg.includes(r.name)) ) {
-                for (var i in rolesgg){
-                    let rolerem = bot.guilds.find(g => g.id == message.guild.id).roles.find(r => r.name == rolesgg[i]);
-                    if (message.member.roles.some(role=>[rolesgg[i]].includes(role.name))){
-                        await message.member.removeRole(rolerem); // Забрать роли указанные ранее.
-                    }
-                }
-            }
+	    if (field_user.roles != null){
+		    if(message.member.roles.some(r=>rolesgg.includes(r.name)) ) {
+			for (var i in rolesgg){
+			    let rolerem = bot.guilds.find(g => g.id == message.guild.id).roles.find(r => r.name == rolesgg[i]);
+			    if (message.member.roles.some(role=>[rolesgg[i]].includes(role.name))){
+				await message.member.removeRole(rolerem); // Забрать роли указанные ранее.
+			    }
+			}
+		    }
+	    }
             message.react(`📛`) // Поставить знак стоп под отправленным сообщением.
             return // Выход
         }
@@ -2943,16 +2945,18 @@ bot.on('raw', async event => {
                 }
                 let rolesremoved = false;
                 let rolesremovedcount = 0;
-                if (field_user.roles.some(r=>rolesgg.includes(r.name))) {
-                    for (var i in rolesgg){
-                        let rolerem = server.roles.find(r => r.name == rolesgg[i]);
-                        if (field_user.roles.some(role=>[rolesgg[i]].includes(role.name))){
-                            rolesremoved = true;
-                            rolesremovedcount = rolesremovedcount+1;
-                            await field_user.removeRole(rolerem); // Забрать фракционные роли
-                        }
-                    }
-                }
+		if (field_user.roles != null){
+			if (field_user.roles.some(r=>rolesgg.includes(r.name))) {
+			    for (var i in rolesgg){
+				let rolerem = server.roles.find(r => r.name == rolesgg[i]);
+				if (field_user.roles.some(role=>[rolesgg[i]].includes(role.name))){
+				    rolesremoved = true;
+				    rolesremovedcount = rolesremovedcount+1;
+				    await field_user.removeRole(rolerem); // Забрать фракционные роли
+				}
+			    }
+			}
+		}
                 await field_user.addRole(field_role); // Выдать роль по соответствию с тэгом
                 channel.send(`\`[ACCEPT]\` <@${member.id}> \`одобрил запрос от ${field_nickname}, с ID: ${field_user.id}\``);
                 if (rolesremoved){
