@@ -2746,10 +2746,10 @@ if (message.content.startsWith("/warn")){
         });
     }
 
-    if (message.content == 'форматирование ролей'){
+    if (message.content == 'форматирование_ролей'){
         console.log("1")
         if (!message.member.hasPermission("ADMINISTRATOR")) return
-        const args = message.content.slice('форматирование ролей').split(/ +/)
+        const args = message.content.slice('форматирование_ролей').split(/ +/)
         let iyz = 0;
         let role = message.guild.roles.find(r => r.name == args[1]);
         let membersWithRole = message.guild.roles.get(role.id).members;
