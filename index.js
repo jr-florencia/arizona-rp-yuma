@@ -2787,12 +2787,12 @@ if (message.content.startsWith("/warn")){
                 let accepted = [];
                 await members_leader.forEach(async lmember => {
                     if (lmember.roles.some(r => r.id == role.id)){
-                        await accepted.push(lmember.id);
+                        await accepted.push("<@" + lmember.id + ">");
                     }
                 })
                 await members_dleader.forEach(async dmember => {
                     if (dmember.roles.some(r => r.id == role.id)){
-                        await accepted.push(dmember.id);
+                        await accepted.push("<@" + dmember.id + ">");
                     }
                 })
                 const embed = new Discord.RichEmbed()
