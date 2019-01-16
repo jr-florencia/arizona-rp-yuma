@@ -2780,12 +2780,19 @@ if (message.content.startsWith("/warn")){
                 }
                 if (sened.has(message.member.displayName)) return message.react(`🕖`) // Если уже отправлял - поставить часы.
                 let nickname = message.member.displayName;
-                let leader_role = message.guild.roles.find(r => r.name == "✵Leader✵" || r.name == "✫Deputy Leader✫");
+                let leader_role = message.guild.roles.find(r => r.name == "✵Leader✵");
+                let dleader_role = message.guild.roles.find(r => r.name == "✫Deputy Leader✫");
                 let members_leader = message.guild.roles.get(leader_role.id).members;
+                let members_dleader = message.guild.roles.get(dleader_role.id).members;
                 let accepted = [];
                 await members_leader.forEach(async lmember => {
                     if (lmember.roles.some(r => r.id == role.id)){
-                        accepted.push("<@" + lmember.id + ">");
+                        await accepted.push(lmember.id);
+                    }
+                })
+                await members_dleader.forEach(async dmember => {
+                    if (dmember.roles.some(r => r.id == role.id)){
+                        await accepted.push(dmember.id);
                     }
                 })
                 const embed = new Discord.RichEmbed()
