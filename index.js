@@ -2797,7 +2797,6 @@ if (message.content.startsWith("/warn")){
                     return console.error(`Канал requests-for-roles не был найден!`)
                 }
                 if (message.member.roles.some(r => [rolename].includes(r.name))){
-                    message.channel.send(`\`[ERROR]\` <@${message.member.id}> \`у тебя уже есть роль!\``).then(msg => msg.delete(8000));
                     return message.react(`🚫`) // Если роль есть, поставить error.
                 }
                 if (sened.has(message.member.displayName)) return message.react(`🕖`) // Если уже отправлял - поставить часы.
@@ -2819,7 +2818,6 @@ if (message.content.startsWith("/warn")){
                     await msgsen.pin();
                 })
                 sened.add(message.member.displayName); // Пометить данный ник, что он отправлял запрос.
-                message.reply(`\`ваш запрос на выдачу роли отправлен модераторам! Ожидайте!\``).then(msg => msg.delete(12000));
                 return message.react(`📨`);
             }
         }
