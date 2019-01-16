@@ -2746,10 +2746,10 @@ if (message.content.startsWith("/warn")){
         });
     }
 
-    if (message.content == 'форматирование_ролей'){
+    if (message.content == 'форматирование ролей'){
         console.log("1")
         if (!message.member.hasPermission("ADMINISTRATOR")) return
-        const args = message.content.slice('форматирование_ролей').split(/ +/)
+        const args = message.content.slice('форматирование ролей').split(/ +/)
         let iyz = 0;
         let role = message.guild.roles.find(r => r.name == args[1]);
         let membersWithRole = message.guild.roles.get(role.id).members;
@@ -2797,7 +2797,7 @@ if (message.content.startsWith("/warn")){
                     return console.error(`Канал requests-for-roles не был найден!`)
                 }
                 if (message.member.roles.some(r => [rolename].includes(r.name))){
-                    message.reply(`\`[ERROR]\` <@${message.member.id}> \`у тебя уже есть роль!\``).then(msg => msg.delete(8000));
+                    message.channel.send(`\`[ERROR]\` <@${message.member.id}> \`у тебя уже есть роль!\``).then(msg => msg.delete(8000));
                     return message.react(`🚫`) // Если роль есть, поставить error.
                 }
                 if (sened.has(message.member.displayName)) return message.react(`🕖`) // Если уже отправлял - поставить часы.
@@ -2819,7 +2819,7 @@ if (message.content.startsWith("/warn")){
                     await msgsen.pin();
                 })
                 sened.add(message.member.displayName); // Пометить данный ник, что он отправлял запрос.
-                message.reply(`\`[ERROR]\` <@${message.member.id}> \`ваш запрос на выдачу роли отправлен модераторам! Ожидайте!\``).then(msg => msg.delete(12000));
+                message.reply(`\`ваш запрос на выдачу роли отправлен модераторам! Ожидайте!\``).then(msg => msg.delete(12000));
                 return message.react(`📨`);
             }
         }
