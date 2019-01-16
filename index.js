@@ -2833,7 +2833,7 @@ bot.on('raw', async event => {
                     channel.send(`\`[DELETED]\` ${member} \`удалил багнутый запрос.\``);
                 }else{
                     if (!member.hasPermission("ADMINISTRATOR")){
-                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                             return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
                         }
                     }
@@ -2850,7 +2850,7 @@ bot.on('raw', async event => {
                     channel.send(`\`[DELETED]\` ${member} \`удалил багнутый запрос на снятие роли.\``);
                 }else{
                     if (!member.hasPermission("ADMINISTRATOR")){
-                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                             return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
                         }
                     }
@@ -2869,7 +2869,7 @@ bot.on('raw', async event => {
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа выдачи роли.\``).then(msg => msg.delete(12000));
                     }
                 }
@@ -2887,7 +2887,7 @@ bot.on('raw', async event => {
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа снятия роли.\``).then(msg => msg.delete(12000));
                     }
                 }
@@ -2914,7 +2914,7 @@ bot.on('raw', async event => {
                     return message.delete(); // Если роль есть, то выход
                 }
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для выдачи роли.\``).then(msg => msg.delete(12000));
                     }
                 }
@@ -2954,7 +2954,7 @@ bot.on('raw', async event => {
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].some(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для снятия роли.\``).then(msg => msg.delete(12000));
                     }
                 }
