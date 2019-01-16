@@ -2785,7 +2785,7 @@ if (message.content.startsWith("/warn")){
                 let accepted = [];
                 await members_leader.forEach(async lmember => {
                     if (lmember.roles.some(r => r.id == role.id)){
-                        accepted.push(lmember.id);
+                        accepted.push("<@" + lmember.id + ">");
                     }
                 })
                 const embed = new Discord.RichEmbed()
