@@ -2746,7 +2746,7 @@ if (message.content.startsWith("/warn")){
         });
     }
 
-    if (message.content == 'форматирование ролей'){
+    if (message.content.startsWith('форматирование ролей')){
         console.log("1")
         if (!message.member.hasPermission("ADMINISTRATOR")) return
         const args = message.content.slice('форматирование ролей').split(/ +/)
