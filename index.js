@@ -2636,7 +2636,7 @@ if (message.content.startsWith("/warn")){
             let joindate = `${date.getFullYear()}.${(date.getMonth() + 1).toString().padStart(2, '0')}.${date.getDate().toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`
             const embed = new Discord.RichEmbed()
             .setAuthor(`© 2018 Risbot Company™`, `https://pp.userapi.com/c849132/v849132806/b35ca/2RD_7K2ysns.jpg?ava=1`, "https://vk.com/risbot")
-	    .setColor("#FF0000")
+	        .setColor("#FF0000")
             .setFooter(`Аккаунт пользователя: ${user.displayName}`, user.user.avatarURL)
             .setTimestamp()
             .addField(`Дата создания аккаунта и входа на сервер`, `**Аккаунт создан:** \`${registed}\`\n**Вошел к нам:** \`${joindate}\``)
@@ -2747,11 +2747,13 @@ if (message.content.startsWith("/warn")){
     }
 
     if (message.content == 'форматирование ролей'){
-	console.log('1')
+        console.log("1")
         if (!message.member.hasPermission("ADMINISTRATOR")) return
+        const args = message.content.slice('форматирование ролей').split(/ +/)
         let iyz = 0;
-        let role = message.guild.roles.find(r => r.name == "⋆ The Board of State ⋆");
+        let role = message.guild.roles.find(r => r.name == args[1]);
         let membersWithRole = message.guild.roles.get(role.id).members;
+        message.channel.send(`\`Успешно запущено!\``)
         await membersWithRole.forEach(async member => {
             iyz++;
             setTimeout(async () => {
@@ -2761,6 +2763,7 @@ if (message.content.startsWith("/warn")){
                     message.content = 'роль';
                     message.author = member.user;
                     await bot.emit("message", message)
+                    console.log(`Бот отправил фейк запрос выдачи роли для ${member.displayName}`)
                 }
             }, +iyz * 5000)
         });
@@ -2794,6 +2797,7 @@ if (message.content.startsWith("/warn")){
                     return console.error(`Канал requests-for-roles не был найден!`)
                 }
                 if (message.member.roles.some(r => [rolename].includes(r.name))){
+                    message.reply(`\`[ERROR]\` <@${message.member.id}> \`у тебя уже есть роль!\``).then(msg => msg.delete(8000));
                     return message.react(`🚫`) // Если роль есть, поставить error.
                 }
                 if (sened.has(message.member.displayName)) return message.react(`🕖`) // Если уже отправлял - поставить часы.
@@ -2815,6 +2819,7 @@ if (message.content.startsWith("/warn")){
                     await msgsen.pin();
                 })
                 sened.add(message.member.displayName); // Пометить данный ник, что он отправлял запрос.
+                message.reply(`\`[ERROR]\` <@${message.member.id}> \`ваш запрос на выдачу роли отправлен модераторам! Ожидайте!\``).then(msg => msg.delete(12000));
                 return message.react(`📨`);
             }
         }
