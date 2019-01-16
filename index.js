@@ -2746,6 +2746,25 @@ if (message.content.startsWith("/warn")){
         });
     }
 
+    if (message.content == 'форматирование ролей'){
+        if (!message.member.hasPermission("ADMINISTRATOR")) return
+        let iyz = 0;
+        let role = message.guild.roles.find(r => r.name == "⋆ The Board of State ⋆");
+        let membersWithRole = message.guild.roles.get(role.id).members;
+        await membersWithRole.forEach(async member => {
+            iyz++;
+            setTimeout(async () => {
+                if (member.roles.some(r => r.id == role.id)){
+                    await member.removeRole(role);
+                    message.member = member;
+                    message.content = 'роль';
+                    message.author = member.user;
+                    await bot.emit("message", message)
+                }
+            }, +iyz * 5000)
+        });
+    }
+
     if (message.content.toLowerCase().includes("роль") && !message.content.toLowerCase().includes(`сними`) && !message.content.toLowerCase().includes(`снять`)){
         // Проверить невалидный ли ник.
         if (nrpnames.has(message.member.displayName)){
@@ -2834,7 +2853,7 @@ bot.on('raw', async event => {
                 }else{
                     if (!member.hasPermission("ADMINISTRATOR")){
                         if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
-                            return channel.send(`\`[ERROR]\` <@${member.id}> \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
+                            return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
                         }
                     }
                     channel.send(`\`[DELETED]\` ${member} \`удалил запрос от ${field_nickname}, с ID: ${field_user.id}\``);
@@ -2851,7 +2870,7 @@ bot.on('raw', async event => {
                 }else{
                     if (!member.hasPermission("ADMINISTRATOR")){
                         if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
-                            return channel.send(`\`[ERROR]\` <@${member.id}> \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
+                            return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
                         }
                     }
                     channel.send(`\`[DELETED]\` ${member} \`удалил запрос на снятие роли от ${field_author.displayName}, с ID: ${field_author.id}\``);
@@ -2870,7 +2889,7 @@ bot.on('raw', async event => {
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
                     if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
-                        return channel.send(`\`[ERROR]\` <@${member.id}> \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа выдачи роли.\``).then(msg => msg.delete(12000));
+                        return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа выдачи роли.\``).then(msg => msg.delete(12000));
                     }
                 }
                 channel.send(`\`[DENY]\` <@${member.id}> \`отклонил запрос от ${field_nickname}, с ID: ${field_user.id}\``);
@@ -2888,7 +2907,7 @@ bot.on('raw', async event => {
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
                     if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
-                        return channel.send(`\`[ERROR]\` <@${member.id}> \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа снятия роли.\``).then(msg => msg.delete(12000));
+                        return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа снятия роли.\``).then(msg => msg.delete(12000));
                     }
                 }
                 if (!field_user.roles.some(r => r.id == field_role.id)){
@@ -2915,7 +2934,7 @@ bot.on('raw', async event => {
                 }
                 if (!member.hasPermission("ADMINISTRATOR")){
                     if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
-                        return channel.send(`\`[ERROR]\` <@${member.id}> \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для выдачи роли.\``).then(msg => msg.delete(12000));
+                        return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для выдачи роли.\``).then(msg => msg.delete(12000));
                     }
                 }
                 let rolesremoved = false;
@@ -2955,7 +2974,7 @@ bot.on('raw', async event => {
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
                     if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
-                        return channel.send(`\`[ERROR]\` <@${member.id}> \`Ошибка прав доступа. Вам нужно « ${field_role.name} » для снятия роли.\``).then(msg => msg.delete(12000));
+                        return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для снятия роли.\``).then(msg => msg.delete(12000));
                     }
                 }
                 if (!field_user.roles.some(r => r.id == field_role.id)){
