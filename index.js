@@ -2747,6 +2747,7 @@ if (message.content.startsWith("/warn")){
     }
 
     if (message.content == 'форматирование ролей'){
+	console.log('1')
         if (!message.member.hasPermission("ADMINISTRATOR")) return
         let iyz = 0;
         let role = message.guild.roles.find(r => r.name == "⋆ The Board of State ⋆");
