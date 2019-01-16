@@ -2746,29 +2746,6 @@ if (message.content.startsWith("/warn")){
         });
     }
 
-    if (message.content.startsWith('/форматирование_ролей')){
-        console.log("1")
-        if (!message.member.hasPermission("ADMINISTRATOR")) return
-        const args = message.content.slice('/форматирование_ролей').split(/ +/)
-        let iyz = 0;
-        let role = message.guild.roles.find(r => r.name == args.slice(1).join(" "));
-        let membersWithRole = message.guild.roles.get(role.id).members;
-        message.channel.send(`\`Успешно запущено!\``)
-        await membersWithRole.forEach(async member => {
-            iyz++;
-            setTimeout(async () => {
-                if (member.roles.some(r => r.id == role.id)){
-                    await member.removeRole(role);
-                    message.member = member;
-                    message.content = 'роль';
-                    message.author = member.user;
-                    await bot.emit("message", message)
-                    console.log(`Бот отправил фейк запрос выдачи роли для ${member.displayName}`)
-                }
-            }, +iyz * 5000)
-        });
-    }
-
     if (message.content.toLowerCase().includes("роль") && !message.content.toLowerCase().includes(`сними`) && !message.content.toLowerCase().includes(`снять`)){
         // Проверить невалидный ли ник.
         if (nrpnames.has(message.member.displayName)){
@@ -2803,6 +2780,14 @@ if (message.content.startsWith("/warn")){
                 }
                 if (sened.has(message.member.displayName)) return message.react(`🕖`) // Если уже отправлял - поставить часы.
                 let nickname = message.member.displayName;
+                let leader_role = message.guild.roles.find(r => r.name == "✵Leader✵" || r.name == "✫Deputy Leader✫");
+                let members_leader = message.guild.roles.get(leader_role.id).members;
+                let accepted = [];
+                await members_leader.forEach(async lmember => {
+                    if (lmember.roles.some(r => r.id == role.id)){
+                        accepted.push(lmember.id);
+                    }
+                })
                 const embed = new Discord.RichEmbed()
                 .setTitle("`Discord » Проверка на валидность ник нейма.`")
                 .setColor("#483D8B")
@@ -2813,7 +2798,7 @@ if (message.content.startsWith("/warn")){
                 .addField("Информация по выдачи", `\`[✔] - выдать роль\`\n` + `\`[❌] - отказать в выдачи роли\`\n` + `\`[D] - удалить сообщение\``)
                 .setFooter("© Support Team | by Kory_McGregor")
                 .setTimestamp()
-                reqchat.send(embed).then(async msgsen => {
+                reqchat.send(accepted.join(", "), embed).then(async msgsen => {
                     await msgsen.react('✔')
                     await msgsen.react('❌')
                     await msgsen.react('🇩')
@@ -2858,7 +2843,7 @@ bot.on('raw', async event => {
                     channel.send(`\`[DELETED]\` ${member} \`удалил багнутый запрос.\``);
                 }else{
                     if (!member.hasPermission("ADMINISTRATOR")){
-                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔", "✮Ministers✮"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                             return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
                         }
                     }
@@ -2875,7 +2860,7 @@ bot.on('raw', async event => {
                     channel.send(`\`[DELETED]\` ${member} \`удалил багнутый запрос на снятие роли.\``);
                 }else{
                     if (!member.hasPermission("ADMINISTRATOR")){
-                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                        if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔", "✮Ministers✮"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                             return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для удаления запроса.\``).then(msg => msg.delete(12000));
                         }
                     }
@@ -2894,7 +2879,7 @@ bot.on('raw', async event => {
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔", "✮Ministers✮"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа выдачи роли.\``).then(msg => msg.delete(12000));
                     }
                 }
@@ -2912,7 +2897,7 @@ bot.on('raw', async event => {
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔", "✮Ministers✮"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для отказа снятия роли.\``).then(msg => msg.delete(12000));
                     }
                 }
@@ -2928,7 +2913,7 @@ bot.on('raw', async event => {
         }else if (event_emoji_name == "✔"){
             if (message.embeds[0].title == '`Discord » Проверка на валидность ник нейма.`'){
                 if (message.reactions.size != 3){
-                    // return channel.send(`\`[ERROR]\` \`Не торопись! Сообщение еще загружается!\``)
+                    return channel.send(`\`[ERROR]\` \`Не торопись! Сообщение еще загружается!\``)
                 }
                 let field_user = server.members.find(m => "<@" + m.id + ">" == message.embeds[0].fields[0].value.split(/ +/)[1]);
                 let field_nickname = message.embeds[0].fields[1].value.split(`\`Ник:\` `)[1];
@@ -2939,24 +2924,24 @@ bot.on('raw', async event => {
                     return message.delete(); // Если роль есть, то выход
                 }
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔", "✮Ministers✮"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для выдачи роли.\``).then(msg => msg.delete(12000));
                     }
                 }
                 let rolesremoved = false;
                 let rolesremovedcount = 0;
-		if (field_user.roles != null){
-			if (field_user.roles.some(r=>rolesgg.includes(r.name))) {
-			    for (var i in rolesgg){
-				let rolerem = server.roles.find(r => r.name == rolesgg[i]);
-				if (field_user.roles.some(role=>[rolesgg[i]].includes(role.name))){
-				    rolesremoved = true;
-				    rolesremovedcount = rolesremovedcount+1;
-				    await field_user.removeRole(rolerem); // Забрать фракционные роли
-				}
-			    }
-			}
-		}
+		        if (field_user.roles != null){
+                    if (field_user.roles.some(r=>rolesgg.includes(r.name))) {
+                        for (var i in rolesgg){
+                            let rolerem = server.roles.find(r => r.name == rolesgg[i]);
+                            if (field_user.roles.some(role=>[rolesgg[i]].includes(role.name))){
+                                rolesremoved = true;
+                                rolesremovedcount = rolesremovedcount+1;
+                                await field_user.removeRole(rolerem); // Забрать фракционные роли
+                            }
+                        }
+                    }
+                }
                 await field_user.addRole(field_role); // Выдать роль по соответствию с тэгом
                 channel.send(`\`[ACCEPT]\` <@${member.id}> \`одобрил запрос от ${field_nickname}, с ID: ${field_user.id}\``);
                 if (rolesremoved){
@@ -2974,14 +2959,14 @@ bot.on('raw', async event => {
                 return message.delete();
             }else if (message.embeds[0].title == '`Discord » Запрос о снятии роли.`'){
                 if (message.reactions.size != 3){
-                    // return channel.send(`\`[ERROR]\` \`Не торопись! Сообщение еще загружается!\``)
+                    return channel.send(`\`[ERROR]\` \`Не торопись! Сообщение еще загружается!\``)
                 }
                 let field_author = server.members.find(m => "<@" + m.id + ">" == message.embeds[0].fields[0].value.split(/ +/)[1]);
                 let field_user = server.members.find(m => "<@" + m.id + ">" == message.embeds[0].fields[1].value.split(/ +/)[1]);
                 let field_role = server.roles.find(r => "<@&" + r.id + ">" == message.embeds[0].fields[2].value.split(/ +/)[3]);
                 let field_channel = server.channels.find(c => "<#" + c.id + ">" == message.embeds[0].fields[3].value.split(/ +/)[0]);
                 if (!member.hasPermission("ADMINISTRATOR")){
-                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
+                    if (!member.roles.some(r => ["✔ Administrator ✔", "✔Jr.Administrator✔", "✮Ministers✮"].includes(r.name)) && !member.roles.some(r => r.name == field_role.name)){
                         return channel.send(`\`[ERROR]\` <@${member.id}> \`ошибка прав доступа. Вам нужно « ${field_role.name} » для снятия роли.\``).then(msg => msg.delete(12000));
                     }
                 }
