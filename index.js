@@ -3024,23 +3024,23 @@ bot.on('guildMemberAdd', async member => {
     levelhigh++;
     if (levelhigh >= 5){
         if (member.hasPermission("MANAGE_ROLES")){
-            member.guild.channels.find(c => c.name == "spectator-chat").send(`\`[SYSTEM]\` ${member} \`мог быть заблокирован за попытку атаки. Уровень опасности: ${levelhigh}\``);
+            member.guild.channels.find(c => c.name == "reports-log").send(`\`[SYSTEM]\` ${member} \`мог быть заблокирован за попытку атаки. Уровень опасности: ${levelhigh}\``);
         }else{
             member.ban(`by RisBot [DDOS]`);
             console.log(`${member.id} - заблокирован за ДДОС.`)
-            member.guild.channels.find(c => c.name == "spectator-chat").send(`\`[SYSTEM]\` ${member} \`был заблокирован за попытку атаки. Уровень опасности: ${levelhigh}\``)
+            member.guild.channels.find(c => c.name == "reports-log").send(`\`[SYSTEM]\` ${member} \`был заблокирован за попытку атаки. Уровень опасности: ${levelhigh}\``)
         }
         setTimeout(() => {
             if (levelhigh > 0){
-                member.guild.channels.find(c => c.name == "spectator-chat").send(`\`[SYSTEM]\` \`Уровень опасности сервера был установлен с ${levelhigh} на ${+levelhigh - 1}.\``);
+                member.guild.channels.find(c => c.name == "reports-log").send(`\`[SYSTEM]\` \`Уровень опасности сервера был установлен с ${levelhigh} на ${+levelhigh - 1}.\``);
                 levelhigh--;
             }
         }, 60000*levelhigh);
     }else{
-        member.guild.channels.find(c => c.name == "spectator-chat").send(`\`[SYSTEM]\` ${member} \`вошел на сервер. Уровень опасности: ${levelhigh}/5\``)
+        member.guild.channels.find(c => c.name == "reports-log").send(`\`[SYSTEM]\` ${member} \`вошел на сервер. Уровень опасности: ${levelhigh}/5\``)
         setTimeout(() => {
             if (levelhigh > 0){
-                member.guild.channels.find(c => c.name == "spectator-chat").send(`\`[SYSTEM]\` \`Уровень опасности сервера был установлен с ${levelhigh} на ${+levelhigh - 1}.\``);
+                member.guild.channels.find(c => c.name == "reports-log").send(`\`[SYSTEM]\` \`Уровень опасности сервера был установлен с ${levelhigh} на ${+levelhigh - 1}.\``);
                 levelhigh--;
             }
         }, 60000*levelhigh);
