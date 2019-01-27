@@ -1,5 +1,5 @@
 const Discord = require('discord.js'); // by Artemka076#6715
-const bot = new Discord.Client();
+const bot = new Discord.Client(); // My Bot
 const fs = require("fs");
 
 let levelhigh = 0;
