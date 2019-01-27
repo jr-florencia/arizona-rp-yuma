@@ -36,10 +36,10 @@ tags = ({
     "ЛСПД": "⋆ Los-Santos Police Department ⋆",
     "SFPD": "⋆ San-Fierro Police Department ⋆",
     "СФПД": "⋆ San-Fierro Police Department ⋆",
-    "LVPD": "⋆ Special Weapons And Tactics ⋆",
-    "ЛВПД": "⋆ Special Weapons And Tactics ⋆",
-    "SWAT": "⋆ Special Weapons And Tactics ⋆",
-    "СВАТ": "⋆ Special Weapons And Tactics ⋆",
+    "LVPD": "⋆Las Venturas Police Department⋆",
+    "ЛВПД": "⋆Las Venturas Police Department⋆",
+    "SWAT": "⋆Las Venturas Police Department⋆",
+    "СВАТ": "⋆Las Venturas Police Department⋆",
     "RCPD": "⋆ Red Country Sheriff Department ⋆",
     "РКПД": "⋆ Red Country Sheriff Department ⋆",
     "RCSD": "⋆ Red Country Sheriff Department ⋆",
@@ -173,7 +173,7 @@ let manytags = [
 "NW",
 "НВ",
 ];
-let rolesgg = ["⋆ Government ⋆", "⋆ Central Bank of Los-Santos ⋆", "⋆ Driving School ⋆", "⋆ Federal Bureau of Investigation ⋆", "⋆ Special Weapons And Tactics ⋆", "⋆ Los-Santos Police Department ⋆", "⋆ San-Fierro Police Department ⋆", "⋆ Red Country Sheriff Department ⋆", "⋆ Los-Santos Army ⋆", "⋆ San-Fierro Army ⋆", "⋆ Maximum Security Prison ⋆", "⋆ Los-Santos Medical Center ⋆", "⋆ San-Fierro Medical Center ⋆", "⋆ Las-Venturas Medical Center ⋆", "⋆ Radiocentre Los-Santos ⋆", "⋆ Radiocentre San-Fierro ⋆", "⋆ Radiocentre Las-Venturas ⋆", "⋆ Warlock MC ⋆", "⋆ Russian Mafia ⋆", "⋆ La Cosa Nostra ⋆", "⋆ Yakuza ⋆", "⋆ Grove Street Gang ⋆", "⋆ East Side Ballas Gang ⋆", "⋆ Vagos Gang ⋆", "⋆ Aztecas Gang ⋆", "⋆ Rifa Gang ⋆", "⋆ Night Wolfs ⋆"]
+let rolesgg = ["⋆ Government ⋆", "⋆ Central Bank of Los-Santos ⋆", "⋆ Driving School ⋆", "⋆ Federal Bureau of Investigation ⋆", "⋆Las Venturas Police Department⋆", "⋆ Los-Santos Police Department ⋆", "⋆ San-Fierro Police Department ⋆", "⋆ Red Country Sheriff Department ⋆", "⋆ Los-Santos Army ⋆", "⋆ San-Fierro Army ⋆", "⋆ Maximum Security Prison ⋆", "⋆ Los-Santos Medical Center ⋆", "⋆ San-Fierro Medical Center ⋆", "⋆ Las-Venturas Medical Center ⋆", "⋆ Radiocentre Los-Santos ⋆", "⋆ Radiocentre San-Fierro ⋆", "⋆ Radiocentre Las-Venturas ⋆", "⋆ Warlock MC ⋆", "⋆ Russian Mafia ⋆", "⋆ La Cosa Nostra ⋆", "⋆ Yakuza ⋆", "⋆ Grove Street Gang ⋆", "⋆ East Side Ballas Gang ⋆", "⋆ Vagos Gang ⋆", "⋆ Aztecas Gang ⋆", "⋆ Rifa Gang ⋆", "⋆ Night Wolfs ⋆"]
 let canremoverole = ["✫Deputy Leader✫", "✵Leader✵", "✮Ministers✮", "✔ Helper ✔"];
 
 const events = {
