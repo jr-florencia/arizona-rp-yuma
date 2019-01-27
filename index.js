@@ -721,6 +721,26 @@ bot.on('message', async message => {
         return bot.destroy();
     }
 	
+	if (message.content.startsWith("/unmute")){
+    if (!message.member.roles.some(r => r.name == "Spectator™")) return message.reply(`\`нет прав\``);
+    let user = message.guild.member(message.mentions.users.first());
+    if (!user){
+        message.delete()
+        return message.reply(`пользователь не указан.`)
+    } 
+    user.setMute(false, `by ${message.member.displayName}`).then(() => {
+        message.reply(`пользователю снят мут.`);
+    }).catch(() => {
+        message.reply(`я не смог снять ему мут`);
+    })
+    user.setDeaf(false, `by ${message.member.displayName}`).then(() => {
+        message.reply(`пользователю снято заглушение.`);
+    }).catch(() => {
+        message.reply(`я не смог снять ему заглушение`);
+    })
+    return message.delete()
+}
+	
     if (message.content.startsWith("/setup")){
         let level_mod = 0;
         let db_server = bot.guilds.find(g => g.id == "531533132982124544");
