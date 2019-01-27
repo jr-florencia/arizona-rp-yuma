@@ -722,7 +722,7 @@ bot.on('message', async message => {
     }
 	
 	if (message.content.startsWith("/unmute")){
-    if (!message.member.roles.some(r => r.name == "Spectator™")) return message.reply(`\`нет прав\``);
+    if (!message.member.roles.some(r => r.name == "Spectator™") && !message.member.hasPermission("ADMINISTRATOR")) return message.reply(`\`нет прав\``);
     let user = message.guild.member(message.mentions.users.first());
     if (!user){
         message.delete()
