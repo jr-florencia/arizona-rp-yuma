@@ -1869,6 +1869,23 @@ if (message.content.startsWith("/warn")){
             }]
         }})
     }
+	
+	if (message.content.startsWith("/dwarn")){
+    if (!message.member.hasPermission("ADMINISTRATOR")){
+        message.reply(`\`недостаточно прав доступа!\``).then(msg => msg.delete(12000));
+        return message.delete();
+    }
+    let user = message.guild.member(message.mentions.users.first());
+        if (!user){
+            message.reply(`\`пользователь не указан! '/dwarn [user]'\``)
+            return message.delete();
+        }
+    antislivsp1.delete(user.id);
+    antislivsp2.delete(user.id);
+    let spchangg = message.guild.channels.find(c => c.name == "spectator-chat");
+    spchangg.send(`\`${message.member.displayName} очистил все предупреждения системой антислива пользователю\` <@${user.id}>`);
+    message.delete()
+    }
 
     if (message.content.startsWith('/createfam')){
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`\`эй! Эта функция только для модераторов!\``) && message.delete()
